@@ -1,0 +1,4 @@
+Product Price Quantity
+Apple 1.2 100
+Banana 0.75 250
+Orange 1.5 180

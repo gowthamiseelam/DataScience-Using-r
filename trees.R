@@ -1,0 +1,8 @@
+data()
+View(trees)
+model <- lm(Volume ~ Girth + Height, data = trees)
+summary(model)
+print(model)
+new_val <-data.frame(Girth=12,Height = 100)
+res<-predict(model,new_val)
+print(res)
