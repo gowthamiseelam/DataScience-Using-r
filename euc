@@ -1,0 +1,6 @@
+write(AirPassengers,file="AirPassengers.txt")
+data<-scan("AirPassengers.txt")
+tsobj<-ts(data,start=c(1949,1),end=c(1951,1),frequency=12)
+
+print(tsobj)
+plot(tsobj)
