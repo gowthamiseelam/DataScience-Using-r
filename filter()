@@ -1,0 +1,32 @@
+
+library(dplyr)
+
+df <- data.frame(
+  Name = c("Gowtham", "Bhanu", "Priya", "sana", "manny"),
+  Age = c(25, 30, 22, 35, 28),
+  City = c("Hyd", "Mumbai", "Chennai", "Hyd", "Bangalore"),
+  Salary = c(50000, 60000, 45000, 75000, 55000)
+)
+
+filtered_by_age <- filter(df, Age > 25)
+print("Filtered by Age > 25:")
+print(filtered_by_age)
+
+filtered_by_city <- filter(df, City == "Hyd")
+print("\nFiltered by City == 'Hyd':")
+print(filtered_by_city)
+
+filtered_multiple_conditions <- filter(df, Age > 25, City == "Mumbai")
+print("\nFiltered by Age > 25 AND City == 'Mumbai':")
+print(filtered_multiple_conditions)
+
+
+filtered_city_in <- filter(df, City %in% c("Hyd", "Chennai"))
+print("\nFiltered by City %in% c('Hyd', 'Chennai'):")
+print(filtered_city_in)
+
+filtered_piped <- df %>%
+  filter(Age < 30) %>%
+  filter(City == "Hyd")
+print("\nFiltered using pipes (Age < 30 AND City == 'Hyd'):")
+print(filtered_piped)
